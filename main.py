@@ -1,10 +1,14 @@
 #encoding=utf-8
+
+#请务必仔细阅读README.MD中内容！！！
+#https://github.com/HiddenStrawberry/JD-LotteryPackLite
 import requests
 import time
 import re
 import sys
 import csv
 import datetime
+import threading
 stdi,stdo,stde=sys.stdin,sys.stdout,sys.stderr
 reload(sys)
 sys.setdefaultencoding('utf-8',) 
@@ -15,21 +19,20 @@ def loadCSVfile(file):
 def lottery_time(userid,code,timet,delay,cookielist,proxylist=[]):
     cookiedt=[]
     msglist=[]
+    ps=0
     for each in cookielist:
         if str(each[0])==str(userid):
             cookiedt.append(each[1])
     proxies=[]
+    
     if proxylist!=[]:
         ps=1 #代理模式开启
         for each in proxylist:
             address='http://'+str(each[0])+':'+str(each[1])
             proxies.append({'http':address})
-   
     time1=datetime.datetime.strptime(timet,'%Y-%m-%d %H:%M:%S')
     enabled=1
     while enabled==1:
-        
-            
         if datetime.datetime.now()>=time1:
             for each in cookiedt:
                 headers={'cookie':each,'Referer':'http://l.activity.jd.com/lottery/lottery_chance.action?lotteryCode='+code}
@@ -70,7 +73,7 @@ def add_lottery(userid,code,timet,delay,cookielist,proxylist=[]):
     time.sleep(0.1)
 if __name__ == "__main__":            
     cookielist=loadCSVfile('cookies.csv') #加载Cookies文件
-    #proxylist=loadCSVfile('ip.csv') #加载代理地址文件
-    lottery_time('1','4b6c385f-a626-48d2-8abe-f2ce2ebe5d5f','2017-03-08 20:57:30',5,cookielist,proxylist) #代理模式
-    lottery_time('1','4b6c385f-a626-48d2-8abe-f2ce2ebe5d5f','2017-03-08 20:57:30',5,cookielist) #无代理模式
+    proxylist=loadCSVfile('ip.csv') #加载代理地址文件
+    add_lottery('1','4b6c385f-a626-48d2-8abe-f2ce2ebe5d5f','2017-03-08 20:57:30',5,cookielist,proxylist) #代理模式
+    #add_lottery('1','4b6c385f-a626-48d2-8abe-f2ce2ebe5d5f','2017-03-08 20:57:30',5,cookielist,proxylist=[]) #无代理模式
 
