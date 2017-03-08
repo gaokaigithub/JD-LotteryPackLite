@@ -1,0 +1,5 @@
+{"data":{"chances":0,"downgradeCanNotWin":false,"pass":false,"promptMsg":"抽奖频率过快","userPin":"18842484750_p","winner":false},"responseCode":"0015","responseMessage":"frequency_too_fast"}
+{"data":{"chances":0,"downgradeCanNotWin":false,"pass":false,"promptMsg":"抽奖频率过快","userPin":"18842484750_p","winner":false},"responseCode":"0015","responseMessage":"frequency_too_fast"}
+{"data":{"chances":0,"downgradeCanNotWin":false,"pass":false,"promptMsg":"没有机会了","userPin":"18842484750_p","winner":false},"responseCode":"0000","responseMessage":"request_success"}
+{"data":{"chances":0,"downgradeCanNotWin":false,"pass":false,"promptMsg":"没有机会了","userPin":"18842484750_p","winner":false},"responseCode":"0000","responseMessage":"request_success"}
+{"data":{"chances":0,"downgradeCanNotWin":false,"pass":false,"promptMsg":"没有机会了","userPin":"18842484750_p","winner":false},"responseCode":"0000","responseMessage":"request_success"}
